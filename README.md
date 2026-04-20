@@ -1,16 +1,37 @@
-# llm
+# Local LLM
 
-A new Flutter project.
+A Flutter app for running and integrating large language models locally on-device and via API.
+
+## Features
+
+- On-device inference via Ollama and Flutter Gemma
+- Property listing generation (PropSnap feature)
+- Authentication with Supabase
+- Settings management for model configuration
+
+## Tech Stack
+
+- **Flutter** with Riverpod for state management
+- **Supabase** for auth and backend
+- **Ollama** for local LLM inference
+- **Flutter Gemma** for on-device model inference
+- **go_router** for navigation
+- Clean Architecture (data / domain / presentation layers)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone the repo
+2. Copy `config.json.example` to `config.json` and fill in your Supabase credentials
+3. Run `flutter pub get`
+4. Run `flutter run`
 
-A few resources to get you started if this is your first Flutter project:
+## Configuration
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The app reads `config.json` at runtime (excluded from version control):
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```json
+{
+  "SUPABASE_URL": "your-supabase-url",
+  "SUPABASE_ANON_KEY": "your-anon-key"
+}
+```
